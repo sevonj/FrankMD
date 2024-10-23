@@ -8,7 +8,7 @@ A description of this project.
 ## Development
 [➜ Project management](https://github.com/users/sevonj/projects/15)
 
-Check out the linked project for an overview of issues.
+Check out the linked project for an organized overview of issues.
 
 ### Requirements
 - `PyGObject`
