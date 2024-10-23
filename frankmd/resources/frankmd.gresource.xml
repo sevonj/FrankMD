@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/fi/sevonj/FrankMD">
+    <file alias="style.css">style.css</file>
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">library_view.ui</file>
+    <file preprocess="xml-stripblanks">sheet_button.ui</file>
+    <file preprocess="xml-stripblanks">sheets_view.ui</file>
+    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+  </gresource>
+</gresources>

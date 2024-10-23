@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=frankmd
+Exec=frankmd
+Icon=fi.sevonj.FrankMD
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

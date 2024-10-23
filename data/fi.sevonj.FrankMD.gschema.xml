@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="frankmd">
+	<schema id="fi.sevonj.FrankMD" path="/fi/sevonj/FrankMD/">
+	</schema>
+</schemalist>

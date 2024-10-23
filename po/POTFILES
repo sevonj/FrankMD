@@ -1,0 +1,6 @@
+data/fi.sevonj.FrankMD.desktop.in
+data/fi.sevonj.FrankMD.metainfo.xml.in
+data/fi.sevonj.FrankMD.gschema.xml
+src/main.py
+src/window.py
+src/resources/window.ui

@@ -1,0 +1,18 @@
+.no-bg {
+  background: none;
+}
+.no-bg:hover {
+  background: none;
+}
+
+.no-vpad {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.no-pad {
+  padding: 0;
+}
+
+.library-view-project {
+  padding-right: 0;
+}
