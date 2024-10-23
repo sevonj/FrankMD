@@ -1,4 +1,6 @@
-# frankmd
+# Markdown Editor
+
+Working title FrankMD, named after Frank the snake, because python.
 
 A description of this project.
 
