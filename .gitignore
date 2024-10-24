@@ -1,4 +1,5 @@
 .venv/
 .vscode/
 .mypy_cache/
-.builddir/
+builddir/
+**/__pycache__
