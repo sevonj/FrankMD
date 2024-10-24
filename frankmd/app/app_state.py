@@ -42,9 +42,8 @@ class AppState:
 
     def __init__(self) -> None:
         self._projects: list[Project] = []
-
-        self._current_dir: LibraryDir | None
-        self._current_sheet: Sheet | None
+        self._current_dir: LibraryDir | None = None
+        self._current_sheet: Sheet | None = None
 
     def get_current_dir(self) -> LibraryDir | None:
         return self._current_dir
