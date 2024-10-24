@@ -22,7 +22,9 @@ Check out the linked project for an organized overview of issues.
 Pull requests are gatekept by [this workflow.](https://github.com/sevonj/frankmd/blob/master/.github/workflows/ci.yml) It will check if
 - The code passes tests (run `pytest` at project root)
 - Linter has complaints (run `ruff check` at project root)
-- Is formatted (run `black frankmd`)
+- Is formatted
+  - (run `black .` at project root to format)
+  - (run `black --check .` at project root to just check)
 
 ### Dev FAQ:
 #### Pylint no member but code works
