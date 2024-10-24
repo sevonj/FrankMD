@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="Adw" version="1.0" />
+  <requires lib="gtksourceview" version="5.0" />
+  <template class="MdEditor" parent="AdwBin">
+    <child>
+      <object class="GtkScrolledWindow" id="scrollarea">
+        <property name="hscrollbar_policy">never</property>
+        <child>
+          <object class="GtkSourceView" id="sourceview">
+            <property name="tab-width">4</property>
+            <property name="auto-indent">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

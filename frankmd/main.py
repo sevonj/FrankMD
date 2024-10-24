@@ -41,6 +41,8 @@ class FrankmdApp(Adw.Application):
         super().__init__(
             application_id="fi.sevonj.FrankMD", flags=Gio.ApplicationFlags.DEFAULT_FLAGS
         )
+        GtkSource.init()  # Needed to use GtkSource widgets in ui xml
+
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("about", self.on_about_action)
         self.create_action("preferences", self.on_preferences_action)
