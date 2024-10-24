@@ -26,6 +26,7 @@ from frankmd.app.app_state import AppState
 from frankmd.app.sheet import Sheet
 
 
+@Gtk.Template(resource_path="/fi/sevonj/FrankMD/md_editor.ui")
 class MdEditor(Adw.Bin):
     """Sidebar project browser"""
 
@@ -43,6 +44,8 @@ class MdEditor(Adw.Bin):
         "_sourceview",
     )
 
+    sourceview: GtkSource.View = Gtk.Template.Child()  # type: ignore
+
     def __init__(self, app: AppState):
         super().__init__()
 
@@ -55,9 +58,7 @@ class MdEditor(Adw.Bin):
         self._buffer = GtkSource.Buffer.new_with_language(self._language)
         self._file: GtkSource.File
 
-        self._sourceview = GtkSource.View.new_with_buffer(self._buffer)
-        self._sourceview.set_show_line_marks(True)
-        self.set_child(self._sourceview)
+        self.sourceview.set_buffer(self._buffer)
         self.set_margin_start(32)
         self.set_margin_end(32)
 
