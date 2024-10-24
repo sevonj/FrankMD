@@ -36,6 +36,7 @@ def test_open_project_finds_subdirs():
     root = project.get_root()
     assert isinstance(root, LibraryDir)
     assert len(root.get_subdirs()) == 2
+    root.get_subdirs().sort()  # Sort by path. Must do if more than one.
 
     subdir = root.get_subdirs()[0]
     assert isinstance(subdir, LibraryDir)
@@ -66,6 +67,7 @@ def test_open_project_finds_all_sheets():
     assert len(subdir.get_sheets()) == 1
     assert len(subsubdir.get_sheets()) == 1
     assert len(subdir2.get_sheets()) == 0
+    root.get_sheets().sort()  # Sort by path. Must do if more than one.
 
     sheet_0 = root.get_sheets()[0]
     sheet_1 = root.get_sheets()[1]
