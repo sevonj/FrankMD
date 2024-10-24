@@ -7,6 +7,15 @@ from frankmd.app.sheet import Sheet
 ROOT = os.path.join("tests", "example_content")
 
 
+def print_dir_tree(dir: LibraryDir, depth: int = 0):
+    print("." * depth, dir.get_display_name())
+    for child in dir._subdirs.items():
+        print_dir_tree(child[1], depth + 1)
+
+    for sheet in dir._sheets.items():
+        print(sheet[1])
+
+
 def test_open_project():
     path = os.path.join(ROOT, "project_a")
     project = Project(path)
@@ -33,6 +42,8 @@ def test_open_project_finds_subdirs():
     path = os.path.join(ROOT, "project_a")
     project = Project(path)
 
+    print_dir_tree(project.get_root())
+
     root = project.get_root()
     assert isinstance(root, LibraryDir)
     assert len(root.get_subdirs()) == 2
@@ -56,6 +67,8 @@ def test_open_project_finds_subdirs():
 def test_open_project_finds_all_sheets():
     path = os.path.join(ROOT, "project_a")
     project = Project(path)
+
+    print_dir_tree(project.get_root())
 
     root = project.get_root()
     subdir = root.get_subdirs()[0]
