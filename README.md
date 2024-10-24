@@ -19,10 +19,10 @@ Check out the linked project for an organized overview of issues.
 ### Build
 
 ### Continuous Integration
-Pull requests are gatekept by [this workflow.](https://github.com/sevonj/frankmd/blob/master/.github/workflows/ci.yml) It will check if the code
-- passes tests (run `pytest` at project root)
-- has linter warnings (run `pylint frankmd`)
-- is formatted (run `black frankmd`)
+Pull requests are gatekept by [this workflow.](https://github.com/sevonj/frankmd/blob/master/.github/workflows/ci.yml) It will check if
+- The code passes tests (run `pytest` at project root)
+- Linter has complaints (run `ruff check` at project root)
+- Is formatted (run `black frankmd`)
 
 ### Dev FAQ:
 #### Pylint no member but code works

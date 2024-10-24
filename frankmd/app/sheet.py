@@ -53,7 +53,7 @@ class Sheet:
 
             return "\n".join(lines)
 
-        except:  # pylint: disable=bare-except
+        except Exception as _:
             return "(Couldn't open file)"
 
     def load(self) -> str:

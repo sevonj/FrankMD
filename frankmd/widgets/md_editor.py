@@ -17,7 +17,6 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# pylint: disable=broad-exception-caught
 
 import gi
 from gi.repository import Adw, Gio, Gtk, GtkSource

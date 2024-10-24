@@ -46,7 +46,7 @@ class FrankmdApp(Adw.Application):
 
         self._app = AppState()
 
-    def do_activate(self):  # pylint: disable=arguments-differ
+    def do_activate(self):
         """Called when the application is activated.
 
         We raise the application's main window, creating it if
