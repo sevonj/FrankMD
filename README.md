@@ -1,4 +1,5 @@
 # Markdown Editor
+[![CI](https://github.com/sevonj/FrankMD/actions/workflows/ci.yml/badge.svg)](https://github.com/sevonj/FrankMD/actions/workflows/ci.yml)
 
 Working title FrankMD, named after Frank the snake, because python.
 
