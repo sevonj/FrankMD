@@ -24,7 +24,7 @@ class LibraryDir:
         return self._path
 
     def __lt__(self, other: Self) -> bool:
-        return os.path.basename(self._path) < os.path.basename(self._path)
+        return os.path.basename(self._path) < os.path.basename(other._path)
 
     def get_depth(self) -> int:
         return self._depth
