@@ -30,6 +30,7 @@ class NestedProjectsParentError(Exception):
 
 class AppState:
     """
+    Library management.
     This class is the root of all application logic.
     """
 
@@ -42,10 +43,7 @@ class AppState:
     def __init__(self) -> None:
         self._projects: list[Project] = []
 
-        self._projects.append(Project("/home/julius/Documents/Notes/obsidian/Personal"))
-        self._projects.append(Project("/home/julius/Documents/Courses/Cyber Security"))
-
-        self._current_dir: LibraryDir | None = self._projects[0].get_root()
+        self._current_dir: LibraryDir | None
         self._current_sheet: Sheet | None
 
     def get_current_dir(self) -> LibraryDir | None:
