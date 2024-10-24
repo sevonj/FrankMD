@@ -25,7 +25,13 @@ jobs:
     - name: Install python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint PyGObject PyGObject-stubs
-    - name: Analysing the code with pylint
+        pip install pylint mypy PyGObject PyGObject-stubs
+
+    - name: Run pylint
       run: |
         pylint $(git ls-files '*.py')
+
+    - name: Run mypy
+      run: |
+        mypy frankmd
+  
