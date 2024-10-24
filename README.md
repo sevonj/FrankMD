@@ -21,6 +21,7 @@ Check out the linked project for an organized overview of issues.
 ### Continuous Integration
 Pull requests are gatekept by [this workflow.](https://github.com/sevonj/frankmd/blob/master/.github/workflows/ci.yml) It will check if the code
 - has linter warnings (run `pylint frankmd`)
+- is formatted (run `black frankmd`)
 
 ### Dev FAQ:
 #### Pylint no member but code works
