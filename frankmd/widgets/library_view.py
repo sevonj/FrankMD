@@ -134,7 +134,7 @@ class ProjectView(
             child = LibraryDirView(subdir, self._app, self._container)
             self._container.append(child)
             child.refresh()
-            self._content[subdir.get_path()] = child  # type: ignore
+            self._content[subdir.get_path()] = child
 
         if root == self._app.get_current_dir():
             self._container.select_row(self)
