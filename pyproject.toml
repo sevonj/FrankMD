@@ -10,3 +10,11 @@ license = { file = "COPYING" }
 requires-python = ">=3.12"
 dependencies = []
 readme = "README.md"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+exclude = ["tests"]

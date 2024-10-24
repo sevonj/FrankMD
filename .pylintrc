@@ -1,7 +1,0 @@
-[MAIN]
-
-disable=
-    missing-function-docstring,
-    missing-class-docstring,
-    missing-module-docstring,
-    no-member, # False positives, already handled by mypy.

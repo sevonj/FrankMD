@@ -17,7 +17,6 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# pylint: disable=broad-exception-caught
 
 from typing import Self
 import gi
@@ -28,9 +27,7 @@ from frankmd.app.project import LibraryDir, Project
 gi.require_version("Adw", "1")
 
 
-class LibraryDirView(
-    Adw.ActionRow
-):  # pylint: disable=too-many-instance-attributes # Remove when converting to xml
+class LibraryDirView(Adw.ActionRow):
 
     __gtype_name__ = "LibraryDirView"
 
@@ -86,10 +83,7 @@ class LibraryDirView(
         self.selected.emit()  # type: ignore
 
 
-class ProjectView(
-    Adw.ActionRow
-):  # pylint: disable=too-many-instance-attributes # Remove when converting to xml
-
+class ProjectView(Adw.ActionRow):
     __gtype_name__ = "ProjectView"
 
     @GObject.Signal
