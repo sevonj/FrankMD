@@ -4,7 +4,7 @@ from typing import Self
 from frankmd.app.sheet import Sheet
 
 
-class LibraryDir(object):
+class LibraryDir:
     """Reference to a directory within a library"""
 
     __slots__ = (
@@ -40,15 +40,15 @@ class LibraryDir(object):
     def get_subdirs(self) -> list[Self]:
         """Returns subdirs sorted by name."""
         subdirs: list[Self] = []
-        for key in self._subdirs:
-            subdirs.append(self._subdirs[key])
+        for item in self._subdirs.items():
+            subdirs.append(item[1])
         return sorted(subdirs)
 
     def get_sheets(self) -> list[Sheet]:
         """Returns sheets sorted by path."""
         sheets: list[Sheet] = []
-        for key in self._sheets:
-            sheets.append(self._sheets[key])
+        for item in self._sheets.items():
+            sheets.append(item[1])
         return sorted(sheets)
 
     def refresh(self) -> None:
@@ -86,7 +86,7 @@ class LibraryDir(object):
             attempt_no += 1
             path = os.path.join(self._path, f"New sheet {attempt_no}.md")
 
-        with open(path, "w") as file:
+        with open(path, "w", encoding="utf-8") as _:
             pass
 
         self._add_sheet(Sheet(path))

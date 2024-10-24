@@ -18,18 +18,15 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import gi
-
+from gi.repository import Adw, Gtk, GObject
+from frankmd.app.app_state import AppState
 from frankmd.app.sheet import Sheet
 
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk, GObject
-
-from frankmd.app.app_state import AppState
 
 
 @Gtk.Template(resource_path="/fi/sevonj/FrankMD/sheet_button.ui")
 class SheetButton(Gtk.Button):
-    """ """
 
     __gtype_name__ = "SheetButton"
 

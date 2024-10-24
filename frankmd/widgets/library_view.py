@@ -17,17 +17,20 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+# pylint: disable=broad-exception-caught
+
+from typing import Self
 import gi
-
-gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk, GObject, Pango
-from typing import Any, Callable, Self
-
 from frankmd.app.app_state import AppState
 from frankmd.app.project import LibraryDir, Project
 
+gi.require_version("Adw", "1")
 
-class LibraryDirView(Adw.ActionRow):
+
+class LibraryDirView(
+    Adw.ActionRow
+):  # pylint: disable=too-many-instance-attributes # Remove when converting to xml
 
     __gtype_name__ = "LibraryDirView"
 
@@ -83,7 +86,9 @@ class LibraryDirView(Adw.ActionRow):
         self.selected.emit()  # type: ignore
 
 
-class ProjectView(Adw.ActionRow):
+class ProjectView(
+    Adw.ActionRow
+):  # pylint: disable=too-many-instance-attributes # Remove when converting to xml
 
     __gtype_name__ = "ProjectView"
 
@@ -226,5 +231,6 @@ class LibraryView(Adw.NavigationPage):
                     self._app.add_project(path)
                     self.dir_changed.emit()  # type: ignore
                     self.refresh()
+
         except BaseException as e:
             print(e)

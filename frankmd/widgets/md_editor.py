@@ -17,13 +17,14 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+# pylint: disable=broad-exception-caught
+
 import gi
-
-
-gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio, Gtk, GtkSource
 from frankmd.app.app_state import AppState
 from frankmd.app.sheet import Sheet
+
+gi.require_version("Adw", "1")
 
 
 @Gtk.Template(resource_path="/fi/sevonj/FrankMD/md_editor.ui")
@@ -36,8 +37,6 @@ class MdEditor(Adw.Bin):
         "_app",
         "_content",
         "_sheet",
-        "_lang_manager",
-        "_language",
         "_buffer",
         "_gfile",
         "_file",
@@ -51,11 +50,13 @@ class MdEditor(Adw.Bin):
 
         self._app = app
         self._content: list = []
+        self._sheet: Sheet
 
-        self._lang_manager = GtkSource.LanguageManager()
-        self._language: GtkSource.Language = self._lang_manager.get_language("markdown")  # type: ignore
-        assert isinstance(self._language, GtkSource.Language)
-        self._buffer = GtkSource.Buffer.new_with_language(self._language)
+        lang_manager = GtkSource.LanguageManager()
+        lang: GtkSource.Language = lang_manager.get_language("markdown")  # type: ignore
+        assert isinstance(lang, GtkSource.Language)
+        self._buffer = GtkSource.Buffer.new_with_language(lang)
+        self._gfile: Gio.File
         self._file: GtkSource.File
 
         self.sourceview.set_buffer(self._buffer)

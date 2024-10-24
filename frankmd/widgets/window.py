@@ -22,7 +22,7 @@ from gi.repository import Adw
 from gi.repository import Gtk
 
 from frankmd.app.app_state import AppState
-from frankmd.widgets.library_view import LibraryDirView, LibraryView
+from frankmd.widgets.library_view import LibraryView
 from frankmd.widgets.md_editor import MdEditor
 from frankmd.widgets.sheets_view import SheetsView
 
