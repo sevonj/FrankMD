@@ -8,12 +8,12 @@ ROOT = os.path.join("tests", "example_content")
 
 
 def print_dir_tree(dir: LibraryDir, depth: int = 0):
-    print("." * depth, dir.get_display_name())
+    print("  " * depth, dir.get_display_name() + "/")
     for child in dir._subdirs.items():
         print_dir_tree(child[1], depth + 1)
 
     for sheet in dir._sheets.items():
-        print(sheet[1])
+        print("  " * (depth + 1), sheet[1].get_display_name())
 
 
 def test_open_project():
