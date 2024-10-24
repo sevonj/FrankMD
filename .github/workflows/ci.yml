@@ -21,7 +21,6 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get upgrade
         sudo apt-get install libgtk-4-dev libadwaita-1-dev 
     - name: Install python dependencies
       run: |
