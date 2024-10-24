@@ -5,7 +5,7 @@ from typing import Self
 class Sheet:
     """A markdown file"""
 
-    __slots__ = "_path"
+    __slots__ = ("_path",)
 
     def __init__(self, file_path: str):
         self._path: str = file_path
@@ -25,7 +25,7 @@ class Sheet:
         max_w = 30  # + ellipsis ("...")
 
         try:
-            with open(self._path, "r") as f:
+            with open(self._path, "r", encoding="utf-8") as f:
                 lines = []
                 line = ""
                 for _ in range(100):
@@ -53,7 +53,7 @@ class Sheet:
 
             return "\n".join(lines)
 
-        except:
+        except:  # pylint: disable=bare-except
             return "(Couldn't open file)"
 
     def load(self) -> str:

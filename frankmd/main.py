@@ -20,16 +20,13 @@
 import sys
 from typing import Any, Callable
 import gi
-
+from gi.repository import Gio, Adw, GtkSource
 from frankmd.app.app_state import AppState
-
+from frankmd.widgets.window import MainWindow
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 gi.require_version("GtkSource", "5")
-
-from gi.repository import Gtk, Gio, Adw, GtkSource
-from frankmd.widgets.window import MainWindow
 
 
 class FrankmdApp(Adw.Application):
@@ -41,7 +38,7 @@ class FrankmdApp(Adw.Application):
         super().__init__(
             application_id="fi.sevonj.FrankMD", flags=Gio.ApplicationFlags.DEFAULT_FLAGS
         )
-        GtkSource.init()  # Needed to use GtkSource widgets in ui xml
+        GtkSource.init()  # Makes widgets usable in ui xml
 
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("about", self.on_about_action)
@@ -49,7 +46,7 @@ class FrankmdApp(Adw.Application):
 
         self._app = AppState()
 
-    def do_activate(self):
+    def do_activate(self):  # pylint: disable=arguments-differ
         """Called when the application is activated.
 
         We raise the application's main window, creating it if
@@ -61,7 +58,7 @@ class FrankmdApp(Adw.Application):
         assert isinstance(win, MainWindow)
         win.present()
 
-    def on_about_action(self, widget, _):
+    def on_about_action(self, _source, _):
         """Callback for the app.about action."""
 
         about = Adw.AboutWindow(
@@ -75,7 +72,7 @@ class FrankmdApp(Adw.Application):
         )
         about.present()
 
-    def on_preferences_action(self, widget, _):
+    def on_preferences_action(self, _source, _):
         """Callback for the app.preferences action."""
         print("app.preferences action activated")
 
